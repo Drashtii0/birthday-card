@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html,body{
+  margin:0;
+  height:100%;
+  background:radial-gradient(circle at top,#ffeef5,#f6fbff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Poppins", system-ui, sans-serif;
+  overflow:hidden;
+}
+
+/* CARD */
+.card{
+  background:#ffffff;
+  padding:46px 42px;
+  border-radius:36px;
+  box-shadow:0 18px 50px rgba(255,160,190,.25);
+  text-align:center;
+  width:420px;
+  position:relative;
+  z-index:2;
+
+  /* ✨ reload animation */
+  animation:
+    cardEntry 1.2s ease-out,
+    glowPulse 2.5s ease-in-out 1.2s;
+}
+
+/* entry motion */
+@keyframes cardEntry{
+  0%{
+    opacity:0;
+    transform:scale(.88) translateY(30px);
+  }
+  60%{
+    opacity:1;
+    transform:scale(1.03) translateY(-4px);
+  }
+  100%{
+    transform:scale(1) translateY(0);
+  }
+}
+
+/* soft glow pulse */
+@keyframes glowPulse{
+  0%{ box-shadow:0 18px 50px rgba(255,160,190,.15); }
+  50%{ box-shadow:0 25px 70px rgba(255,160,190,.35); }
+  100%{ box-shadow:0 18px 50px rgba(255,160,190,.25); }
+}
+
+/* TITLE */
+h1{
+  margin:0;
+  font-size:30px;
+  color:#ff7fa8;
+  font-weight:600;
+}
+
+/* SUBTITLE */
+.subtitle{
+  margin-top:8px;
+  color:#ffb3c8;
+  font-size:15px;
+}
+
+/* GIF */
+.hug-gif{
+  width:240px;
+  margin:30px auto;
+  display:block;
+  border-radius:26px;
+  box-shadow:0 10px 24px rgba(255,170,200,.35);
+}
+
+/* MESSAGE */
+.message{
+  line-height:1.9;
+  font-size:16px;
+  color:#666;
+}
+
+/* SOFT OUTER GLOW */
+.card::after{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border-radius:40px;
+  background:linear-gradient(120deg,#ffdbe9,#e6f3ff,#ffdbe9);
+  filter:blur(30px);
+  z-index:-1;
+  opacity:.6;
+}
+
+/* HEARTS */
+.heart{
+  position:fixed;
+  bottom:-50px;
+  font-size:30px;
+  animation: floatHeart 16s linear infinite;
+  opacity:0;
+}
+
+@keyframes floatHeart{
+  0%{ transform:translateY(0) scale(.7); opacity:0 }
+  20%{ opacity:.6 }
+  100%{ transform:translateY(-110vh) scale(1.1); opacity:0 }
+}
+</style>
+</head>
+
+<body>
+
+<!-- hearts -->
+<div class="heart" style="left:5%; animation-delay:0s">💖</div>
+<div class="heart" style="left:12%; animation-delay:2s">💗</div>
+<div class="heart" style="left:18%; animation-delay:4s">💕</div>
+<div class="heart" style="left:25%; animation-delay:1s">💞</div>
+<div class="heart" style="left:32%; animation-delay:3s">💘</div>
+
+<div class="heart" style="left:40%; animation-delay:5s">💖</div>
+<div class="heart" style="left:48%; animation-delay:2.5s">💗</div>
+<div class="heart" style="left:55%; animation-delay:6s">💕</div>
+<div class="heart" style="left:62%; animation-delay:1.8s">💞</div>
+<div class="heart" style="left:70%; animation-delay:4.2s">💘</div>
+
+<div class="card">
+  <h1>Happy Birthday 🎂</h1>
+
+  <div class="subtitle">
+    made with so much love
+  </div>
+
+  <img src="hug.gif" class="hug-gif" alt="birthday hug gif">
+
+  <div class="message">
+    I hope today feels gentle,<br>
+    calm and full of love 🤍<br>
+    always thinking of you 🌷
+  </div>
+</div>
+
+</body>
+</html>
